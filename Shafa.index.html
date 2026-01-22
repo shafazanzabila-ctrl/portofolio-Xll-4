@@ -1,0 +1,2129 @@
+<!doctype html>
+
+<html lang="id">
+
+ <head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tenis Meja Championship - Turnamen Nasional 2024</title>
+
+  <meta name="description" content="Website resmi kejuaraan tenis meja nasional dengan informasi lengkap turnamen, jadwal, dan pendaftaran">
+
+  <meta name="keywords" content="tenis meja, ping pong, turnamen, kejuaraan, olahraga">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="/_sdk/data_sdk.js"></script>
+
+  <script src="/_sdk/element_sdk.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+
+        body {
+
+            box-sizing: border-box;
+
+        }
+
+        
+
+        .parallax-bg {
+
+            background-attachment: fixed;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            background-size: cover;
+
+        }
+
+        
+
+        .fade-in {
+
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            transition: all 0.6s ease;
+
+        }
+
+        
+
+        .fade-in.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+        
+
+        .dark-mode {
+
+            background-color: #1a1a1a;
+
+            color: #ffffff;
+
+        }
+
+        
+
+        .dark-mode .bg-white {
+
+            background-color: #2d2d2d !important;
+
+        }
+
+        
+
+        .dark-mode .text-gray-800 {
+
+            color: #ffffff !important;
+
+        }
+
+        
+
+        .dark-mode .text-gray-600 {
+
+            color: #cccccc !important;
+
+        }
+
+        
+
+        .chatbot {
+
+            position: fixed;
+
+            bottom: 20px;
+
+            right: 20px;
+
+            z-index: 1000;
+
+        }
+
+        
+
+        .video-bg {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            z-index: -1;
+
+        }
+
+        
+
+        .counter {
+
+            font-size: 3rem;
+
+            font-weight: bold;
+
+            color: #059669;
+
+        }
+
+        
+
+        @keyframes bounce {
+
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+
+            40% { transform: translateY(-10px); }
+
+            60% { transform: translateY(-5px); }
+
+        }
+
+        
+
+        .bounce-animation {
+
+            animation: bounce 2s infinite;
+
+        }
+
+        
+
+        .carousel-container {
+
+            overflow: hidden;
+
+        }
+
+        
+
+        .carousel-track {
+
+            display: flex;
+
+            transition: transform 0.5s ease;
+
+        }
+
+        
+
+        .carousel-slide {
+
+            min-width: 100%;
+
+            flex-shrink: 0;
+
+        }
+
+    </style>
+
+  <style>@view-transition { navigation: auto; }</style>
+
+ </head>
+
+ <body class="font-sans"><!-- Header / Navbar -->
+
+  <header class="bg-white shadow-lg fixed w-full top-0 z-50 transition-all duration-300">
+
+   <nav class="container mx-auto px-4 py-3">
+
+    <div class="flex justify-between items-center">
+
+     <div class="flex items-center space-x-2">
+
+      <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center"><i class="fas fa-table-tennis text-white text-xl"></i>
+
+      </div>
+
+      <h1 id="site-title" class="text-2xl font-bold text-gray-800">Tenis Meja Championship</h1>
+
+     </div><!-- Desktop Menu -->
+
+     <div class="hidden md:flex items-center space-x-6"><a href="#home" class="text-gray-600 hover:text-emerald-600 transition-colors">Beranda</a> <a href="#about" class="text-gray-600 hover:text-emerald-600 transition-colors">Tentang</a> <a href="#events" class="text-gray-600 hover:text-emerald-600 transition-colors">Event</a> <a href="#gallery" class="text-gray-600 hover:text-emerald-600 transition-colors">Galeri</a> <a href="#contact" class="text-gray-600 hover:text-emerald-600 transition-colors">Kontak</a> <!-- Language Switcher --> <select id="language-switcher" class="bg-transparent border border-gray-300 rounded px-2 py-1 text-sm"> <option value="id">🇮🇩 ID</option> <option value="en">🇺🇸 EN</option> </select> <!-- Dark Mode Toggle --> <button id="dark-mode-toggle" class="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"> <i class="fas fa-moon text-gray-600"></i> </button>
+
+     </div><!-- Mobile Menu Button --> <button id="mobile-menu-btn" class="md:hidden p-2"> <i class="fas fa-bars text-gray-600 text-xl"></i> </button>
+
+    </div><!-- Mobile Menu -->
+
+    <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
+
+     <div class="flex flex-col space-y-3"><a href="#home" class="text-gray-600 hover:text-emerald-600 transition-colors">Beranda</a> <a href="#about" class="text-gray-600 hover:text-emerald-600 transition-colors">Tentang</a> <a href="#events" class="text-gray-600 hover:text-emerald-600 transition-colors">Event</a> <a href="#gallery" class="text-gray-600 hover:text-emerald-600 transition-colors">Galeri</a> <a href="#contact" class="text-gray-600 hover:text-emerald-600 transition-colors">Kontak</a>
+
+     </div>
+
+    </div>
+
+   </nav>
+
+  </header><!-- Hero Section with Video Background -->
+
+  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+
+   <div class="absolute inset-0 bg-gradient-to-r from-emerald-900/80 to-blue-900/80 z-10"></div>
+
+   <div class="absolute inset-0 bg-emerald-600 z-0"><!-- Simulated video background with animated elements -->
+
+    <div class="w-full h-full bg-gradient-to-br from-emerald-500 to-blue-600 relative">
+
+     <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-white rounded-full opacity-30 bounce-animation"></div>
+
+     <div class="absolute top-3/4 right-1/4 w-6 h-6 bg-white rounded-full opacity-20 bounce-animation" style="animation-delay: 0.5s;"></div>
+
+     <div class="absolute top-1/2 left-3/4 w-3 h-3 bg-white rounded-full opacity-40 bounce-animation" style="animation-delay: 1s;"></div>
+
+    </div>
+
+   </div>
+
+   <div class="relative z-20 text-center text-white px-4 max-w-4xl mx-auto">
+
+    <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 fade-in">Kejuaraan Tenis Meja Nasional 2024</h1>
+
+    <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 fade-in">Bergabunglah dalam turnamen tenis meja terbesar di Indonesia</p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in"><button class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105"> Daftar Sekarang </button> <button id="video-popup-btn" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-emerald-600 transition-all"> <i class="fas fa-play mr-2"></i>Tonton Video </button>
+
+    </div>
+
+   </div><!-- Search Bar -->
+
+   <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 w-full max-w-md px-4">
+
+    <div class="bg-white/90 backdrop-blur-sm rounded-lg p-4">
+
+     <div class="flex"><input type="text" placeholder="Cari turnamen, pemain, atau berita..." class="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"> <button class="bg-emerald-600 text-white px-6 py-2 rounded-r-lg hover:bg-emerald-700 transition-colors"> <i class="fas fa-search"></i> </button>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Statistics Counter -->
+
+  <section class="py-16 bg-gray-50">
+
+   <div class="container mx-auto px-4">
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+     <div class="fade-in">
+
+      <div class="counter" data-target="500">
+
+       0
+
+      </div>
+
+      <p class="text-gray-600 mt-2">Peserta Terdaftar</p>
+
+     </div>
+
+     <div class="fade-in">
+
+      <div class="counter" data-target="50">
+
+       0
+
+      </div>
+
+      <p class="text-gray-600 mt-2">Turnamen</p>
+
+     </div>
+
+     <div class="fade-in">
+
+      <div class="counter" data-target="25">
+
+       0
+
+      </div>
+
+      <p class="text-gray-600 mt-2">Kota</p>
+
+     </div>
+
+     <div class="fade-in">
+
+      <div class="counter" data-target="100000">
+
+       0
+
+      </div>
+
+      <p class="text-gray-600 mt-2">Total Hadiah (Juta)</p>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- About Section -->
+
+  <section id="about" class="py-20 bg-white">
+
+   <div class="container mx-auto px-4">
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+     <div class="fade-in">
+
+      <h2 class="text-4xl font-bold text-gray-800 mb-6">Tentang Kejuaraan</h2>
+
+      <p class="text-gray-600 mb-6 leading-relaxed">Kejuaraan Tenis Meja Nasional 2024 adalah event olahraga terbesar yang mempertemukan para atlet terbaik dari seluruh Indonesia. Dengan fasilitas modern dan standar internasional, kami menghadirkan kompetisi yang fair dan berkualitas tinggi.</p>
+
+      <div class="space-y-4">
+
+       <div class="flex items-center"><i class="fas fa-trophy text-emerald-600 text-xl mr-3"></i> <span>Standar Internasional ITTF</span>
+
+       </div>
+
+       <div class="flex items-center"><i class="fas fa-users text-emerald-600 text-xl mr-3"></i> <span>500+ Peserta dari 25 Kota</span>
+
+       </div>
+
+       <div class="flex items-center"><i class="fas fa-medal text-emerald-600 text-xl mr-3"></i> <span>Total Hadiah 100 Juta Rupiah</span>
+
+       </div>
+
+      </div>
+
+     </div>
+
+     <div class="fade-in">
+
+      <div class="bg-gradient-to-br from-emerald-500 to-blue-600 rounded-lg p-8 text-white">
+
+       <h3 class="text-2xl font-bold mb-4">Fasilitas &amp; Layanan</h3>
+
+       <ul class="space-y-3">
+
+        <li><i class="fas fa-check mr-2"></i>Arena Bertaraf Internasional</li>
+
+        <li><i class="fas fa-check mr-2"></i>Live Streaming HD</li>
+
+        <li><i class="fas fa-check mr-2"></i>Sistem Scoring Digital</li>
+
+        <li><i class="fas fa-check mr-2"></i>Area Parkir Luas</li>
+
+        <li><i class="fas fa-check mr-2"></i>Food Court &amp; Merchandise</li>
+
+        <li><i class="fas fa-check mr-2"></i>Medical Support 24/7</li>
+
+       </ul>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Events & Schedule -->
+
+  <section id="events" class="py-20 bg-gray-50">
+
+   <div class="container mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+
+     <h2 id="event-title" class="text-4xl font-bold text-gray-800 mb-4">Event Mendatang</h2>
+
+     <p class="text-gray-600 max-w-2xl mx-auto">Jadwal lengkap pertandingan dan event khusus selama kejuaraan berlangsung</p>
+
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+     <div class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+
+      <div class="bg-emerald-600 text-white p-4">
+
+       <h3 class="text-xl font-bold">Hari 1 - Penyisihan</h3>
+
+       <p class="text-emerald-100">15 Januari 2024</p>
+
+      </div>
+
+      <div class="p-6">
+
+       <div class="space-y-3">
+
+        <div class="flex justify-between"><span>Registrasi</span> <span class="font-semibold">07:00 - 08:00</span>
+
+        </div>
+
+        <div class="flex justify-between"><span>Babak Penyisihan</span> <span class="font-semibold">08:30 - 17:00</span>
+
+        </div>
+
+        <div class="flex justify-between"><span>Pengumuman</span> <span class="font-semibold">17:30</span>
+
+        </div>
+
+       </div><button class="w-full mt-4 bg-emerald-600 text-white py-2 rounded-lg hover:bg-emerald-700 transition-colors"> Lihat Detail </button>
+
+      </div>
+
+     </div>
+
+     <div class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+
+      <div class="bg-blue-600 text-white p-4">
+
+       <h3 class="text-xl font-bold">Hari 2 - Semifinal</h3>
+
+       <p class="text-blue-100">16 Januari 2024</p>
+
+      </div>
+
+      <div class="p-6">
+
+       <div class="space-y-3">
+
+        <div class="flex justify-between"><span>Persiapan</span> <span class="font-semibold">08:00 - 09:00</span>
+
+        </div>
+
+        <div class="flex justify-between"><span>Semifinal</span> <span class="font-semibold">09:30 - 15:00</span>
+
+        </div>
+
+        <div class="flex justify-between"><span>Acara Hiburan</span> <span class="font-semibold">19:00 - 21:00</span>
+
+        </div>
+
+       </div><button class="w-full mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"> Lihat Detail </button>
+
+      </div>
+
+     </div>
+
+     <div class="bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+
+      <div class="bg-yellow-600 text-white p-4">
+
+       <h3 class="text-xl font-bold">Hari 3 - Final</h3>
+
+       <p class="text-yellow-100">17 Januari 2024</p>
+
+      </div>
+
+      <div class="p-6">
+
+       <div class="space-y-3">
+
+        <div class="flex justify-between"><span>Persiapan Final</span> <span class="font-semibold">09:00 - 10:00</span>
+
+        </div>
+
+        <div class="flex justify-between"><span>Pertandingan Final</span> <span class="font-semibold">10:30 - 14:00</span>
+
+        </div>
+
+        <div class="flex justify-between"><span>Penyerahan Hadiah</span> <span class="font-semibold">14:30 - 16:00</span>
+
+        </div>
+
+       </div><button class="w-full mt-4 bg-yellow-600 text-white py-2 rounded-lg hover:bg-yellow-700 transition-colors"> Lihat Detail </button>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Gallery Section -->
+
+  <section id="gallery" class="py-20 bg-white">
+
+   <div class="container mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Galeri Foto &amp; Video</h2>
+
+     <p class="text-gray-600">Dokumentasi momen-momen terbaik dari kejuaraan sebelumnya</p>
+
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+     <div class="bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-lg h-48 flex items-center justify-center text-white fade-in">
+
+      <div class="text-center"><i class="fas fa-camera text-4xl mb-2"></i>
+
+       <p>Foto Arena</p>
+
+      </div>
+
+     </div>
+
+     <div class="bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg h-48 flex items-center justify-center text-white fade-in">
+
+      <div class="text-center"><i class="fas fa-video text-4xl mb-2"></i>
+
+       <p>Highlight Match</p>
+
+      </div>
+
+     </div>
+
+     <div class="bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg h-48 flex items-center justify-center text-white fade-in">
+
+      <div class="text-center"><i class="fas fa-trophy text-4xl mb-2"></i>
+
+       <p>Penyerahan Hadiah</p>
+
+      </div>
+
+     </div>
+
+     <div class="bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg h-48 flex items-center justify-center text-white fade-in">
+
+      <div class="text-center"><i class="fas fa-users text-4xl mb-2"></i>
+
+       <p>Peserta</p>
+
+      </div>
+
+     </div>
+
+    </div><!-- Virtual Tour 360° -->
+
+    <div class="mt-12 text-center fade-in"><button id="virtual-tour-btn" class="bg-gradient-to-r from-emerald-600 to-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition-all transform hover:scale-105"> <i class="fas fa-vr-cardboard mr-2"></i>Virtual Tour 360° </button>
+
+    </div>
+
+   </div>
+
+  </section><!-- Testimonials Carousel -->
+
+  <section class="py-20 bg-gray-50">
+
+   <div class="container mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+
+     <h2 class="text-4xl font-bold text-gray-800 mb-4">Testimoni Peserta</h2>
+
+     <p class="text-gray-600">Apa kata para peserta tentang kejuaraan kami</p>
+
+    </div>
+
+    <div class="carousel-container max-w-4xl mx-auto">
+
+     <div class="carousel-track" id="testimonial-track">
+
+      <div class="carousel-slide">
+
+       <div class="bg-white rounded-lg shadow-lg p-8 mx-4">
+
+        <div class="flex items-center mb-4">
+
+         <div class="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold">
+
+          A
+
+         </div>
+
+         <div class="ml-4">
+
+          <h4 class="font-bold text-gray-800">Ahmad Rizki</h4>
+
+          <p class="text-gray-600">Juara 1 Kategori Putra</p>
+
+         </div>
+
+        </div>
+
+        <p class="text-gray-600 italic">"Turnamen yang sangat profesional dengan fasilitas terbaik. Pengalaman yang tak terlupakan!"</p>
+
+        <div class="flex text-yellow-400 mt-4"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+
+        </div>
+
+       </div>
+
+      </div>
+
+      <div class="carousel-slide">
+
+       <div class="bg-white rounded-lg shadow-lg p-8 mx-4">
+
+        <div class="flex items-center mb-4">
+
+         <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+
+          S
+
+         </div>
+
+         <div class="ml-4">
+
+          <h4 class="font-bold text-gray-800">Sari Dewi</h4>
+
+          <p class="text-gray-600">Juara 2 Kategori Putri</p>
+
+         </div>
+
+        </div>
+
+        <p class="text-gray-600 italic">"Organisasi yang rapi dan wasit yang adil. Sangat merekomendasikan untuk ikut tahun depan!"</p>
+
+        <div class="flex text-yellow-400 mt-4"><i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+
+        </div>
+
+       </div>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Contact Section with Map -->
+
+  <section id="contact" class="py-20 bg-white">
+
+   <div class="container mx-auto px-4">
+
+    <div class="text-center mb-12 fade-in">
+
+     <h2 id="contact-title" class="text-4xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
+
+     <p class="text-gray-600">Ada pertanyaan? Jangan ragu untuk menghubungi tim kami</p>
+
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12"><!-- Contact Form -->
+
+     <div class="fade-in">
+
+      <form id="contact-form" class="space-y-6">
+
+       <div><label for="contact-name" class="block text-gray-700 font-semibold mb-2">Nama Lengkap</label> <input type="text" id="contact-name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+
+       </div>
+
+       <div><label for="contact-email" class="block text-gray-700 font-semibold mb-2">Email</label> <input type="email" id="contact-email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+
+       </div>
+
+       <div><label for="contact-message" class="block text-gray-700 font-semibold mb-2">Pesan</label> <textarea id="contact-message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+
+       </div><button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"> <span id="contact-submit-text">Kirim Pesan</span> <i id="contact-loading" class="fas fa-spinner fa-spin ml-2 hidden"></i> </button>
+
+      </form>
+
+     </div><!-- Contact Info & Map -->
+
+     <div class="fade-in">
+
+      <div class="space-y-6">
+
+       <div class="flex items-start"><i class="fas fa-map-marker-alt text-emerald-600 text-xl mt-1 mr-4"></i>
+
+        <div>
+
+         <h4 class="font-bold text-gray-800">Alamat</h4>
+
+         <p class="text-gray-600">Gedung Olahraga Senayan<br>
+
+          Jakarta Pusat, DKI Jakarta 10270</p>
+
+        </div>
+
+       </div>
+
+       <div class="flex items-start"><i class="fas fa-phone text-emerald-600 text-xl mt-1 mr-4"></i>
+
+        <div>
+
+         <h4 class="font-bold text-gray-800">Telepon</h4>
+
+         <p class="text-gray-600">+62 21 1234 5678</p>
+
+        </div>
+
+       </div>
+
+       <div class="flex items-start"><i class="fas fa-envelope text-emerald-600 text-xl mt-1 mr-4"></i>
+
+        <div>
+
+         <h4 class="font-bold text-gray-800">Email</h4>
+
+         <p class="text-gray-600">info@tenismejachampionship.com</p>
+
+        </div>
+
+       </div><!-- Simulated Map -->
+
+       <div class="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+
+        <div class="text-center text-gray-600"><i class="fas fa-map text-4xl mb-2"></i>
+
+         <p>Peta Lokasi Gedung Olahraga Senayan</p><button class="mt-2 text-emerald-600 hover:text-emerald-700">Buka di Google Maps</button>
+
+        </div>
+
+       </div>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </section><!-- Feedback Form -->
+
+  <section class="py-20 bg-gray-50">
+
+   <div class="container mx-auto px-4">
+
+    <div class="max-w-2xl mx-auto">
+
+     <div class="text-center mb-8 fade-in">
+
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Saran &amp; Penilaian</h2>
+
+      <p class="text-gray-600">Bantu kami meningkatkan kualitas kejuaraan dengan memberikan feedback</p>
+
+     </div>
+
+     <form id="feedback-form" class="bg-white rounded-lg shadow-lg p-8 fade-in">
+
+      <div class="space-y-6">
+
+       <div><label for="feedback-name" class="block text-gray-700 font-semibold mb-2">Nama</label> <input type="text" id="feedback-name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
+
+       </div>
+
+       <div><label class="block text-gray-700 font-semibold mb-2">Rating Keseluruhan</label>
+
+        <div class="flex space-x-2"><button type="button" class="rating-star text-2xl text-gray-300 hover:text-yellow-400" data-rating="1">⭐</button> <button type="button" class="rating-star text-2xl text-gray-300 hover:text-yellow-400" data-rating="2">⭐</button> <button type="button" class="rating-star text-2xl text-gray-300 hover:text-yellow-400" data-rating="3">⭐</button> <button type="button" class="rating-star text-2xl text-gray-300 hover:text-yellow-400" data-rating="4">⭐</button> <button type="button" class="rating-star text-2xl text-gray-300 hover:text-yellow-400" data-rating="5">⭐</button>
+
+        </div>
+
+       </div>
+
+       <div><label for="feedback-message" class="block text-gray-700 font-semibold mb-2">Saran &amp; Masukan</label> <textarea id="feedback-message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+
+       </div><button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 transition-colors"> <span id="feedback-submit-text">Kirim Feedback</span> <i id="feedback-loading" class="fas fa-spinner fa-spin ml-2 hidden"></i> </button>
+
+      </div>
+
+     </form>
+
+    </div>
+
+   </div>
+
+  </section><!-- Footer -->
+
+  <footer class="bg-gray-800 text-white py-12">
+
+   <div class="container mx-auto px-4">
+
+    <div class="grid md:grid-cols-4 gap-8">
+
+     <div>
+
+      <div class="flex items-center space-x-2 mb-4">
+
+       <div class="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center"><i class="fas fa-table-tennis text-white"></i>
+
+       </div>
+
+       <h3 class="text-xl font-bold">Tenis Meja Championship</h3>
+
+      </div>
+
+      <p class="text-gray-400">Turnamen tenis meja terbesar di Indonesia dengan standar internasional.</p>
+
+     </div>
+
+     <div>
+
+      <h4 class="text-lg font-semibold mb-4">Menu Utama</h4>
+
+      <ul class="space-y-2 text-gray-400">
+
+       <li><a href="#home" class="hover:text-white transition-colors">Beranda</a></li>
+
+       <li><a href="#about" class="hover:text-white transition-colors">Tentang</a></li>
+
+       <li><a href="#events" class="hover:text-white transition-colors">Event</a></li>
+
+       <li><a href="#gallery" class="hover:text-white transition-colors">Galeri</a></li>
+
+      </ul>
+
+     </div>
+
+     <div>
+
+      <h4 class="text-lg font-semibold mb-4">Informasi</h4>
+
+      <ul class="space-y-2 text-gray-400">
+
+       <li><a href="#" class="hover:text-white transition-colors">Peraturan</a></li>
+
+       <li><a href="#" class="hover:text-white transition-colors">Pendaftaran</a></li>
+
+       <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+
+       <li><a href="#" class="hover:text-white transition-colors">Kontak</a></li>
+
+      </ul>
+
+     </div>
+
+     <div>
+
+      <h4 class="text-lg font-semibold mb-4">Sosial Media</h4>
+
+      <div class="flex space-x-4"><a href="#" class="text-gray-400 hover:text-white transition-colors text-xl"> <i class="fab fa-facebook"></i> </a> <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl"> <i class="fab fa-instagram"></i> </a> <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl"> <i class="fab fa-youtube"></i> </a> <a href="#" class="text-gray-400 hover:text-white transition-colors text-xl"> <i class="fab fa-twitter"></i> </a>
+
+      </div><!-- Share Buttons -->
+
+      <div class="mt-4">
+
+       <p class="text-sm text-gray-400 mb-2">Bagikan:</p>
+
+       <div class="flex space-x-2"><button class="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-sm transition-colors"> <i class="fab fa-facebook mr-1"></i>Share </button> <button class="bg-blue-400 hover:bg-blue-500 px-3 py-1 rounded text-sm transition-colors"> <i class="fab fa-twitter mr-1"></i>Tweet </button>
+
+       </div>
+
+      </div>
+
+     </div>
+
+    </div>
+
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+
+     <p>© 2024 Tenis Meja Championship. All rights reserved.</p>
+
+    </div>
+
+   </div>
+
+  </footer><!-- Chatbot -->
+
+  <div class="chatbot"><button id="chatbot-toggle" class="bg-emerald-600 hover:bg-emerald-700 text-white w-14 h-14 rounded-full shadow-lg transition-all transform hover:scale-110"> <i class="fas fa-comments text-xl"></i> </button>
+
+   <div id="chatbot-window" class="hidden absolute bottom-16 right-0 w-80 bg-white rounded-lg shadow-xl border">
+
+    <div class="bg-emerald-600 text-white p-4 rounded-t-lg">
+
+     <div class="flex justify-between items-center">
+
+      <h4 class="font-semibold">Asisten Virtual</h4><button id="chatbot-close" class="text-white hover:text-gray-200"> <i class="fas fa-times"></i> </button>
+
+     </div>
+
+    </div>
+
+    <div class="p-4 h-64 overflow-y-auto" id="chatbot-messages">
+
+     <div class="bg-gray-100 rounded-lg p-3 mb-3">
+
+      <p class="text-sm">Halo! Saya asisten virtual Tenis Meja Championship. Ada yang bisa saya bantu?</p>
+
+     </div>
+
+    </div>
+
+    <div class="p-4 border-t">
+
+     <div class="flex"><input type="text" id="chatbot-input" placeholder="Ketik pesan..." class="flex-1 px-3 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"> <button id="chatbot-send" class="bg-emerald-600 text-white px-4 py-2 rounded-r-lg hover:bg-emerald-700 transition-colors"> <i class="fas fa-paper-plane"></i> </button>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </div><!-- Video Popup Modal -->
+
+  <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center">
+
+   <div class="bg-white rounded-lg p-6 max-w-2xl w-full mx-4">
+
+    <div class="flex justify-between items-center mb-4">
+
+     <h3 class="text-xl font-bold">Video Promosi Kejuaraan</h3><button id="close-video-modal" class="text-gray-500 hover:text-gray-700"> <i class="fas fa-times text-xl"></i> </button>
+
+    </div>
+
+    <div class="bg-gradient-to-br from-emerald-500 to-blue-600 rounded-lg h-64 flex items-center justify-center text-white">
+
+     <div class="text-center"><i class="fas fa-play-circle text-6xl mb-4"></i>
+
+      <p class="text-xl">Video Promosi Kejuaraan</p>
+
+      <p class="text-sm opacity-75">Durasi: 3:45</p>
+
+     </div>
+
+    </div>
+
+   </div>
+
+  </div>
+
+  <script>
+
+        // Configuration object for Element SDK
+
+        const defaultConfig = {
+
+            site_title: "Tenis Meja Championship",
+
+            hero_title: "Kejuaraan Tenis Meja Nasional 2024",
+
+            hero_subtitle: "Bergabunglah dalam turnamen tenis meja terbesar di Indonesia",
+
+            event_title: "Event Mendatang",
+
+            contact_title: "Hubungi Kami",
+
+            primary_color: "#059669",
+
+            secondary_color: "#2563eb",
+
+            background_color: "#f9fafb",
+
+            accent_color: "#eab308",
+
+            text_color: "#1f2937",
+
+            font_family: "Inter",
+
+            font_size: 16
+
+        };
+
+        let config = { ...defaultConfig };
+
+        let currentLanguage = 'id';
+
+        let isDarkMode = false;
+
+        let currentTestimonial = 0;
+
+        let selectedRating = 0;
+
+        let currentRecordCount = 0;
+
+        // Data SDK Handler
+
+        const dataHandler = {
+
+            onDataChanged(data) {
+
+                currentRecordCount = data.length;
+
+                console.log(`Data updated: ${data.length} records`);
+
+            }
+
+        };
+
+        // Element SDK render function
+
+        async function render(newConfig) {
+
+            config = { ...config, ...newConfig };
+
+            
+
+            // Update text content
+
+            const siteTitle = document.getElementById('site-title');
+
+            if (siteTitle) siteTitle.textContent = config.site_title || defaultConfig.site_title;
+
+            
+
+            const heroTitle = document.getElementById('hero-title');
+
+            if (heroTitle) heroTitle.textContent = config.hero_title || defaultConfig.hero_title;
+
+            
+
+            const heroSubtitle = document.getElementById('hero-subtitle');
+
+            if (heroSubtitle) heroSubtitle.textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+
+            
+
+            const eventTitle = document.getElementById('event-title');
+
+            if (eventTitle) eventTitle.textContent = config.event_title || defaultConfig.event_title;
+
+            
+
+            const contactTitle = document.getElementById('contact-title');
+
+            if (contactTitle) contactTitle.textContent = config.contact_title || defaultConfig.contact_title;
+
+            
+
+            // Apply colors
+
+            const primaryColor = config.primary_color || defaultConfig.primary_color;
+
+            const secondaryColor = config.secondary_color || defaultConfig.secondary_color;
+
+            const backgroundColor = config.background_color || defaultConfig.background_color;
+
+            const accentColor = config.accent_color || defaultConfig.accent_color;
+
+            const textColor = config.text_color || defaultConfig.text_color;
+
+            
+
+            // Update primary color elements
+
+            const primaryElements = document.querySelectorAll('.bg-emerald-600, .text-emerald-600, .border-emerald-600');
+
+            primaryElements.forEach(el => {
+
+                if (el.classList.contains('bg-emerald-600')) {
+
+                    el.style.backgroundColor = primaryColor;
+
+                }
+
+                if (el.classList.contains('text-emerald-600')) {
+
+                    el.style.color = primaryColor;
+
+                }
+
+                if (el.classList.contains('border-emerald-600')) {
+
+                    el.style.borderColor = primaryColor;
+
+                }
+
+            });
+
+            
+
+            // Update secondary color elements
+
+            const secondaryElements = document.querySelectorAll('.bg-blue-600, .text-blue-600');
+
+            secondaryElements.forEach(el => {
+
+                if (el.classList.contains('bg-blue-600')) {
+
+                    el.style.backgroundColor = secondaryColor;
+
+                }
+
+                if (el.classList.contains('text-blue-600')) {
+
+                    el.style.color = secondaryColor;
+
+                }
+
+            });
+
+            
+
+            // Update accent color elements
+
+            const accentElements = document.querySelectorAll('.bg-yellow-600, .text-yellow-400');
+
+            accentElements.forEach(el => {
+
+                if (el.classList.contains('bg-yellow-600')) {
+
+                    el.style.backgroundColor = accentColor;
+
+                }
+
+                if (el.classList.contains('text-yellow-400')) {
+
+                    el.style.color = accentColor;
+
+                }
+
+            });
+
+            
+
+            // Apply font family
+
+            const customFont = config.font_family || defaultConfig.font_family;
+
+            const baseFontStack = 'system-ui, -apple-system, sans-serif';
+
+            document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+
+            
+
+            // Apply font size scaling
+
+            const baseSize = config.font_size || defaultConfig.font_size;
+
+            document.documentElement.style.fontSize = `${baseSize}px`;
+
+            
+
+            // Scale specific elements
+
+            const headings = document.querySelectorAll('h1, h2, h3, h4');
+
+            headings.forEach(heading => {
+
+                const tagName = heading.tagName.toLowerCase();
+
+                let multiplier = 1;
+
+                switch(tagName) {
+
+                    case 'h1': multiplier = 2.5; break;
+
+                    case 'h2': multiplier = 2; break;
+
+                    case 'h3': multiplier = 1.5; break;
+
+                    case 'h4': multiplier = 1.25; break;
+
+                }
+
+                heading.style.fontSize = `${baseSize * multiplier}px`;
+
+            });
+
+        }
+
+        // Element SDK capabilities
+
+        function mapToCapabilities(config) {
+
+            return {
+
+                recolorables: [
+
+                    {
+
+                        get: () => config.primary_color || defaultConfig.primary_color,
+
+                        set: (value) => {
+
+                            config.primary_color = value;
+
+                            if (window.elementSdk) {
+
+                                window.elementSdk.setConfig({ primary_color: value });
+
+                            }
+
+                        }
+
+                    },
+
+                    {
+
+                        get: () => config.secondary_color || defaultConfig.secondary_color,
+
+                        set: (value) => {
+
+                            config.secondary_color = value;
+
+                            if (window.elementSdk) {
+
+                                window.elementSdk.setConfig({ secondary_color: value });
+
+                            }
+
+                        }
+
+                    },
+
+                    {
+
+                        get: () => config.background_color || defaultConfig.background_color,
+
+                        set: (value) => {
+
+                            config.background_color = value;
+
+                            if (window.elementSdk) {
+
+                                window.elementSdk.setConfig({ background_color: value });
+
+                            }
+
+                        }
+
+                    },
+
+                    {
+
+                        get: () => config.accent_color || defaultConfig.accent_color,
+
+                        set: (value) => {
+
+                            config.accent_color = value;
+
+                            if (window.elementSdk) {
+
+                                window.elementSdk.setConfig({ accent_color: value });
+
+                            }
+
+                        }
+
+                    },
+
+                    {
+
+                        get: () => config.text_color || defaultConfig.text_color,
+
+                        set: (value) => {
+
+                            config.text_color = value;
+
+                            if (window.elementSdk) {
+
+                                window.elementSdk.setConfig({ text_color: value });
+
+                            }
+
+                        }
+
+                    }
+
+                ],
+
+                borderables: [],
+
+                fontEditable: {
+
+                    get: () => config.font_family || defaultConfig.font_family,
+
+                    set: (value) => {
+
+                        config.font_family = value;
+
+                        if (window.elementSdk) {
+
+                            window.elementSdk.setConfig({ font_family: value });
+
+                        }
+
+                    }
+
+                },
+
+                fontSizeable: {
+
+                    get: () => config.font_size || defaultConfig.font_size,
+
+                    set: (value) => {
+
+                        config.font_size = value;
+
+                        if (window.elementSdk) {
+
+                            window.elementSdk.setConfig({ font_size: value });
+
+                        }
+
+                    }
+
+                }
+
+            };
+
+        }
+
+        // Element SDK edit panel values
+
+        function mapToEditPanelValues(config) {
+
+            return new Map([
+
+                ["site_title", config.site_title || defaultConfig.site_title],
+
+                ["hero_title", config.hero_title || defaultConfig.hero_title],
+
+                ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+
+                ["event_title", config.event_title || defaultConfig.event_title],
+
+                ["contact_title", config.contact_title || defaultConfig.contact_title]
+
+            ]);
+
+        }
+
+        // Initialize SDKs
+
+        async function initializeSDKs() {
+
+            try {
+
+                // Initialize Data SDK
+
+                if (window.dataSdk) {
+
+                    const initResult = await window.dataSdk.init(dataHandler);
+
+                    if (!initResult.isOk) {
+
+                        console.error("Failed to initialize Data SDK");
+
+                    }
+
+                }
+
+                // Initialize Element SDK
+
+                if (window.elementSdk) {
+
+                    await window.elementSdk.init({
+
+                        defaultConfig,
+
+                        render,
+
+                        mapToCapabilities,
+
+                        mapToEditPanelValues
+
+                    });
+
+                }
+
+            } catch (error) {
+
+                console.error("SDK initialization error:", error);
+
+            }
+
+        }
+
+        // Language translations
+
+        const translations = {
+
+            id: {
+
+                home: "Beranda",
+
+                about: "Tentang",
+
+                events: "Event",
+
+                gallery: "Galeri",
+
+                contact: "Kontak",
+
+                register_now: "Daftar Sekarang",
+
+                watch_video: "Tonton Video",
+
+                search_placeholder: "Cari turnamen, pemain, atau berita...",
+
+                participants: "Peserta Terdaftar",
+
+                tournaments: "Turnamen",
+
+                cities: "Kota",
+
+                prize_money: "Total Hadiah (Juta)"
+
+            },
+
+            en: {
+
+                home: "Home",
+
+                about: "About",
+
+                events: "Events",
+
+                gallery: "Gallery",
+
+                contact: "Contact",
+
+                register_now: "Register Now",
+
+                watch_video: "Watch Video",
+
+                search_placeholder: "Search tournaments, players, or news...",
+
+                participants: "Registered Participants",
+
+                tournaments: "Tournaments",
+
+                cities: "Cities",
+
+                prize_money: "Total Prize (Million)"
+
+            }
+
+        };
+
+        // Language switcher
+
+        function switchLanguage(lang) {
+
+            currentLanguage = lang;
+
+            const t = translations[lang];
+
+            
+
+            // Update navigation
+
+            document.querySelectorAll('nav a').forEach((link, index) => {
+
+                const keys = ['home', 'about', 'events', 'gallery', 'contact'];
+
+                if (keys[index]) {
+
+                    link.textContent = t[keys[index]];
+
+                }
+
+            });
+
+            
+
+            // Update other text elements
+
+            const searchInput = document.querySelector('input[placeholder*="Cari"]');
+
+            if (searchInput) {
+
+                searchInput.placeholder = t.search_placeholder;
+
+            }
+
+        }
+
+        // Dark mode toggle
+
+        function toggleDarkMode() {
+
+            isDarkMode = !isDarkMode;
+
+            document.body.classList.toggle('dark-mode', isDarkMode);
+
+            
+
+            const icon = document.querySelector('#dark-mode-toggle i');
+
+            if (icon) {
+
+                icon.className = isDarkMode ? 'fas fa-sun text-yellow-400' : 'fas fa-moon text-gray-600';
+
+            }
+
+        }
+
+        // Scroll animations
+
+        function handleScrollAnimations() {
+
+            const elements = document.querySelectorAll('.fade-in');
+
+            elements.forEach(element => {
+
+                const elementTop = element.getBoundingClientRect().top;
+
+                const elementVisible = 150;
+
+                
+
+                if (elementTop < window.innerHeight - elementVisible) {
+
+                    element.classList.add('visible');
+
+                }
+
+            });
+
+        }
+
+        // Counter animation
+
+        function animateCounters() {
+
+            const counters = document.querySelectorAll('.counter');
+
+            counters.forEach(counter => {
+
+                const target = parseInt(counter.getAttribute('data-target'));
+
+                const increment = target / 100;
+
+                let current = 0;
+
+                
+
+                const updateCounter = () => {
+
+                    if (current < target) {
+
+                        current += increment;
+
+                        counter.textContent = Math.floor(current);
+
+                        requestAnimationFrame(updateCounter);
+
+                    } else {
+
+                        counter.textContent = target;
+
+                    }
+
+                };
+
+                
+
+                updateCounter();
+
+            });
+
+        }
+
+        // Testimonial carousel
+
+        function rotateTestimonials() {
+
+            const track = document.getElementById('testimonial-track');
+
+            if (track) {
+
+                const slides = track.children.length;
+
+                currentTestimonial = (currentTestimonial + 1) % slides;
+
+                track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+
+            }
+
+        }
+
+        // Contact form submission
+
+        async function handleContactForm(event) {
+
+            event.preventDefault();
+
+            
+
+            if (currentRecordCount >= 999) {
+
+                showToast("Batas maksimum 999 pesan telah tercapai. Silakan coba lagi nanti.", "error");
+
+                return;
+
+            }
+
+            
+
+            const submitBtn = document.getElementById('contact-submit-text');
+
+            const loading = document.getElementById('contact-loading');
+
+            
+
+            submitBtn.textContent = 'Mengirim...';
+
+            loading.classList.remove('hidden');
+
+            
+
+            const formData = {
+
+                id: Date.now().toString(),
+
+                name: document.getElementById('contact-name').value,
+
+                email: document.getElementById('contact-email').value,
+
+                message: document.getElementById('contact-message').value,
+
+                type: 'contact',
+
+                timestamp: new Date().toISOString()
+
+            };
+
+            
+
+            try {
+
+                if (window.dataSdk) {
+
+                    const result = await window.dataSdk.create(formData);
+
+                    if (result.isOk) {
+
+                        showToast("Pesan berhasil dikirim! Kami akan segera menghubungi Anda.", "success");
+
+                        document.getElementById('contact-form').reset();
+
+                    } else {
+
+                        showToast("Gagal mengirim pesan. Silakan coba lagi.", "error");
+
+                    }
+
+                }
+
+            } catch (error) {
+
+                showToast("Terjadi kesalahan. Silakan coba lagi.", "error");
+
+            } finally {
+
+                submitBtn.textContent = 'Kirim Pesan';
+
+                loading.classList.add('hidden');
+
+            }
+
+        }
+
+        // Feedback form submission
+
+        async function handleFeedbackForm(event) {
+
+            event.preventDefault();
+
+            
+
+            if (currentRecordCount >= 999) {
+
+                showToast("Batas maksimum 999 feedback telah tercapai. Silakan coba lagi nanti.", "error");
+
+                return;
+
+            }
+
+            
+
+            if (selectedRating === 0) {
+
+                showToast("Silakan berikan rating terlebih dahulu.", "error");
+
+                return;
+
+            }
+
+            
+
+            const submitBtn = document.getElementById('feedback-submit-text');
+
+            const loading = document.getElementById('feedback-loading');
+
+            
+
+            submitBtn.textContent = 'Mengirim...';
+
+            loading.classList.remove('hidden');
+
+            
+
+            const formData = {
+
+                id: Date.now().toString(),
+
+                name: document.getElementById('feedback-name').value,
+
+                message: document.getElementById('feedback-message').value,
+
+                rating: selectedRating,
+
+                type: 'feedback',
+
+                timestamp: new Date().toISOString()
+
+            };
+
+            
+
+            try {
+
+                if (window.dataSdk) {
+
+                    const result = await window.dataSdk.create(formData);
+
+                    if (result.isOk) {
+
+                        showToast("Feedback berhasil dikirim! Terima kasih atas masukan Anda.", "success");
+
+                        document.getElementById('feedback-form').reset();
+
+                        resetRating();
+
+                    } else {
+
+                        showToast("Gagal mengirim feedback. Silakan coba lagi.", "error");
+
+                    }
+
+                }
+
+            } catch (error) {
+
+                showToast("Terjadi kesalahan. Silakan coba lagi.", "error");
+
+            } finally {
+
+                submitBtn.textContent = 'Kirim Feedback';
+
+                loading.classList.add('hidden');
+
+            }
+
+        }
+
+        // Rating system
+
+        function handleRating(rating) {
+
+            selectedRating = rating;
+
+            const stars = document.querySelectorAll('.rating-star');
+
+            stars.forEach((star, index) => {
+
+                if (index < rating) {
+
+                    star.style.color = '#fbbf24';
+
+                } else {
+
+                    star.style.color = '#d1d5db';
+
+                }
+
+            });
+
+        }
+
+        function resetRating() {
+
+            selectedRating = 0;
+
+            const stars = document.querySelectorAll('.rating-star');
+
+            stars.forEach(star => {
+
+                star.style.color = '#d1d5db';
+
+            });
+
+        }
+
+        // Toast notification
+
+        function showToast(message, type = 'info') {
+
+            const toast = document.createElement('div');
+
+            toast.className = `fixed top-20 right-4 z-50 px-6 py-3 rounded-lg text-white font-semibold transform translate-x-full transition-transform duration-300 ${
+
+                type === 'success' ? 'bg-green-600' : 
+
+                type === 'error' ? 'bg-red-600' : 'bg-blue-600'
+
+            }`;
+
+            toast.textContent = message;
+
+            
+
+            document.body.appendChild(toast);
+
+            
+
+            setTimeout(() => {
+
+                toast.style.transform = 'translateX(0)';
+
+            }, 100);
+
+            
+
+            setTimeout(() => {
+
+                toast.style.transform = 'translateX(100%)';
+
+                setTimeout(() => {
+
+                    document.body.removeChild(toast);
+
+                }, 300);
+
+            }, 3000);
+
+        }
+
+        // Chatbot functionality
+
+        function initializeChatbot() {
+
+            const responses = [
+
+                "Terima kasih telah menghubungi kami! Bagaimana saya bisa membantu Anda?",
+
+                "Untuk informasi pendaftaran, silakan kunjungi bagian Event di website ini.",
+
+                "Turnamen akan diadakan tanggal 15-17 Januari 2024 di Gedung Olahraga Senayan.",
+
+                "Biaya pendaftaran adalah Rp 150.000 per peserta untuk kategori umum.",
+
+                "Anda bisa menghubungi kami di +62 21 1234 5678 untuk informasi lebih lanjut."
+
+            ];
+
+            
+
+            let responseIndex = 0;
+
+            
+
+            document.getElementById('chatbot-send').addEventListener('click', () => {
+
+                const input = document.getElementById('chatbot-input');
+
+                const message = input.value.trim();
+
+                
+
+                if (message) {
+
+                    addChatMessage(message, 'user');
+
+                    input.value = '';
+
+                    
+
+                    setTimeout(() => {
+
+                        const response = responses[responseIndex % responses.length];
+
+                        addChatMessage(response, 'bot');
+
+                        responseIndex++;
+
+                    }, 1000);
+
+                }
+
+            });
+
+            
+
+            document.getElementById('chatbot-input').addEventListener('keypress', (e) => {
+
+                if (e.key === 'Enter') {
+
+                    document.getElementById('chatbot-send').click();
+
+                }
+
+            });
+
+        }
+
+        function addChatMessage(message, sender) {
+
+            const messagesContainer = document.getElementById('chatbot-messages');
+
+            const messageDiv = document.createElement('div');
+
+            messageDiv.className = `mb-3 ${sender === 'user' ? 'text-right' : ''}`;
+
+            
+
+            const messageBubble = document.createElement('div');
+
+            messageBubble.className = `inline-block p-3 rounded-lg text-sm max-w-xs ${
+
+                sender === 'user' 
+
+                    ? 'bg-emerald-600 text-white' 
+
+                    : 'bg-gray-100 text-gray-800'
+
+            }`;
+
+            messageBubble.textContent = message;
+
+            
+
+            messageDiv.appendChild(messageBubble);
+
+            messagesContainer.appendChild(messageDiv);
+
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+        }
+
+        // Event listeners
+
+        document.addEventListener('DOMContentLoaded', async () => {
+
+            await initializeSDKs();
+
+            
+
+            // Mobile menu toggle
+
+            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+
+                const mobileMenu = document.getElementById('mobile-menu');
+
+                mobileMenu.classList.toggle('hidden');
+
+            });
+
+            
+
+            // Language switcher
+
+            document.getElementById('language-switcher').addEventListener('change', (e) => {
+
+                switchLanguage(e.target.value);
+
+            });
+
+            
+
+            // Dark mode toggle
+
+            document.getElementById('dark-mode-toggle').addEventListener('click', toggleDarkMode);
+
+            
+
+            // Video popup
+
+            document.getElementById('video-popup-btn').addEventListener('click', () => {
+
+                document.getElementById('video-modal').classList.remove('hidden');
+
+            });
+
+            
+
+            document.getElementById('close-video-modal').addEventListener('click', () => {
+
+                document.getElementById('video-modal').classList.add('hidden');
+
+            });
+
+            
+
+            // Virtual tour
+
+            document.getElementById('virtual-tour-btn').addEventListener('click', () => {
+
+                showToast("Virtual Tour 360° akan segera tersedia!", "info");
+
+            });
+
+            
+
+            // Chatbot
+
+            document.getElementById('chatbot-toggle').addEventListener('click', () => {
+
+                const chatWindow = document.getElementById('chatbot-window');
+
+                chatWindow.classList.toggle('hidden');
+
+            });
+
+            
+
+            document.getElementById('chatbot-close').addEventListener('click', () => {
+
+                document.getElementById('chatbot-window').classList.add('hidden');
+
+            });
+
+            
+
+            initializeChatbot();
+
+            
+
+            // Forms
+
+            document.getElementById('contact-form').addEventListener('submit', handleContactForm);
+
+            document.getElementById('feedback-form').addEventListener('submit', handleFeedbackForm);
+
+            
+
+            // Rating stars
+
+            document.querySelectorAll('.rating-star').forEach((star, index) => {
+
+                star.addEventListener('click', () => handleRating(index + 1));
+
+            });
+
+            
+
+            // Scroll animations
+
+            window.addEventListener('scroll', handleScrollAnimations);
+
+            
+
+            // Initialize animations
+
+            setTimeout(() => {
+
+                handleScrollAnimations();
+
+                animateCounters();
+
+            }, 500);
+
+            
+
+            // Auto-rotate testimonials
+
+            setInterval(rotateTestimonials, 5000);
+
+            
+
+            // Smooth scrolling for navigation links
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+                anchor.addEventListener('click', function (e) {
+
+                    e.preventDefault();
+
+                    const target = document.querySelector(this.getAttribute('href'));
+
+                    if (target) {
+
+                        target.scrollIntoView({
+
+                            behavior: 'smooth',
+
+                            block: 'start'
+
+                        });
+
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98f41c281078f46d',t:'MTc2MDU4MTU3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>
