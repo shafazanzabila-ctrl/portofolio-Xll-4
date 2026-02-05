@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shafa Zanzabila | Portofolio Personal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+
+        .skill-progress {
+            transition: width 1s ease-in-out;
+        }
+
+        .hover-card {
+            transition: all 0.3s ease;
+        }
+
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- 1. Header & Navigation -->
+    <header class="fixed top-0 w-full z-50 glass-nav">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-xl font-bold tracking-tight text-blue-600">Shafa Zanzabila</span>
+                <span class="text-xs text-slate-500 uppercase tracking-widest">Digital Portfolio</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 font-medium text-sm">
+                <li><a href="#home" class="hover:text-blue-600 transition-colors">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-600 transition-colors">About</a></li>
+                <li><a href="#skills" class="hover:text-blue-600 transition-colors">Skills</a></li>
+                <li><a href="#portfolio" class="hover:text-blue-600 transition-colors">Portfolio</a></li>
+                <li><a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a></li>
+            </ul>
+
+            <button class="md:hidden text-slate-600" id="mobile-menu-btn">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- 2. Beranda (Home) -->
+    <section id="home" class="min-h-screen flex items-center pt-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-blue-600 font-semibold mb-2">Halo, Selamat Datang!</h2>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+                    Saya <span class="text-blue-600">Shafa Zanzabila</span> Happya Putra
+                </h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-lg">
+                    Seorang pelajar yang berdedikasi tinggi, antusias dalam belajar hal baru, dan bercita-cita untuk memberikan dampak positif.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#portfolio" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
+                        Lihat Portofolio
+                    </a>
+                    <a href="#contact" class="border border-slate-300 px-8 py-3 rounded-full font-semibold hover:bg-white transition">
+                        Hubungi Saya
+                    </a>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute inset-0 bg-blue-100 rounded-2xl rotate-6"></div>
+                    <div class="absolute inset-0 bg-blue-600 rounded-2xl -rotate-3 opacity-10"></div>
+                    <img src="https://raw.githubusercontent.com/shafazanzabila-ctrl/portofolio-Xll-4/refs/heads/main/WhatsApp%20Image%202026-02-05%20at%2009.49.04.jpeg" alt="Profile Shafa" class="relative z-10 w-full h-full object-cover rounded-2xl bg-white p-2 border border-slate-100 shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Tentang Saya (About Me) -->
+    <section id="about" class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Tentang Saya</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Profil Diri</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Halo! Saya, seorang siswa di <strong>SMAN 1 Subang</strong> yang sangat antusias dengan pengembangan diri dan teknologi. Saya aktif dalam berbagai Ekstrakurikuler yang mengasah kepemimpinan saya. Salah satu pencapaian yang paling berkesan bagi saya adalah berhasil menjaga konsistensi akademik sambil tetap aktif berorganisasi.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Saya memiliki minat yang sangat besar untuk melanjutkan studi saya di <strong>Universitas Diponegoro</strong>, mengejar cita-cita saya dalam bidang yang saya cintai.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <span class="block text-2xl font-bold text-blue-600">90</span>
+                            <span class="text-sm text-slate-500">Bahasa Inggris</span>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <span class="block text-2xl font-bold text-blue-600">95</span>
+                            <span class="text-sm text-slate-500">Pendidikan Agama Islam</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Riwayat Pendidikan</h3>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 shrink-0">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">SMAN 1 SUBANG</h4>
+                                <p class="text-sm text-slate-500">Sekarang</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center text-slate-400 shrink-0">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">MTsN 1 Subang</h4>
+                                <p class="text-sm text-slate-500">Lulusan SMP</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center text-slate-400 shrink-0">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">SDN 1 Pamanukan</h4>
+                                <p class="text-sm text-slate-500">Pendidikan Dasar</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center text-slate-400 shrink-0">
+                                <i class="fas fa-shapes"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">TK Karya Winaya</h4>
+                                <p class="text-sm text-slate-500">Pendidikan Anak Usia Dini</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Keahlian (Skills) -->
+    <section id="skills" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Keahlian</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Hard Skills -->
+                <div>
+                    <h3 class="text-xl font-bold mb-8 flex items-center">
+                        <i class="fas fa-brain mr-3 text-blue-600"></i> Hard Skills
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Tata Bahasa (Grammar)</span>
+                                <span class="text-blue-600">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-600 h-full skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Kosakata (Vocabulary)</span>
+                                <span class="text-blue-600">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-600 h-full skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Kecepatan Baca (Skimming/Scanning)</span>
+                                <span class="text-blue-600">80%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                <div class="bg-blue-600 h-full skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div>
+                    <h3 class="text-xl font-bold mb-8 flex items-center">
+                        <i class="fas fa-lightbulb mr-3 text-blue-600"></i> Soft Skills
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="font-medium">Kemampuan Analitis</span>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="font-medium">Berpikir Kritis</span>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="font-medium">Pemahaman Konteks</span>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span class="font-medium">Konsistensi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Portofolio & 6. Prestasi -->
+    <section id="portfolio" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Portofolio & Prestasi</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Proyek 1 -->
+                <div class="hover-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+                    <div class="h-48 bg-blue-200 flex items-center justify-center">
+                        <i class="fas fa-book-reader text-5xl text-blue-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl mb-2">Proyek Analisis Bacaan</h4>
+                        <p class="text-slate-600 text-sm mb-4">Melakukan ringkasan dan analisis kritis terhadap literatur bahasa Inggris untuk tugas sekolah.</p>
+                        <a href="#" class="text-blue-600 font-semibold text-sm hover:underline">Lihat Detail →</a>
+                    </div>
+                </div>
+
+                <!-- Prestasi 1 -->
+                <div class="hover-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+                    <div class="h-48 bg-amber-100 flex items-center justify-center">
+                        <i class="fas fa-trophy text-5xl text-amber-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl mb-2">Nilai Tertinggi PAI</h4>
+                        <p class="text-slate-600 text-sm mb-4">Mendapatkan nilai 95 pada mata pelajaran Pendidikan Agama Islam sebagai bukti konsistensi belajar.</p>
+                        <span class="inline-block bg-amber-200 text-amber-800 text-xs px-2 py-1 rounded">Akademik</span>
+                    </div>
+                </div>
+
+                <!-- Proyek 2 -->
+                <div class="hover-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-100">
+                    <div class="h-48 bg-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-users text-5xl text-indigo-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-bold text-xl mb-2">Kegiatan Ekstrakurikuler</h4>
+                        <p class="text-slate-600 text-sm mb-4">Aktif berpartisipasi dalam organisasi sekolah untuk mengembangkan soft skills kepemimpinan.</p>
+                        <a href="#" class="text-blue-600 font-semibold text-sm hover:underline">Lihat Dokumentasi →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Kontak (Contact) -->
+    <section id="contact" class="py-24 px-6 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Mari Terhubung</h2>
+                    <p class="text-slate-400 mb-8">Saya selalu terbuka untuk diskusi mengenai peluang kolaborasi, informasi universitas, atau sekadar bertukar pikiran.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span>shafazanzabila@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <span>082118531119</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <span>@saffzn_</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 flex space-x-4 text-2xl">
+                        <a href="#" class="hover:text-blue-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-blue-400 transition-colors"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 text-slate-900">
+                    <form onsubmit="return false;" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Nama Lengkap</label>
+                            <input type="text" class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Nama Anda">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Email Anda">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Pesan</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none" placeholder="Bagaimana saya bisa membantu?"></textarea>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Footer -->
+    <footer class="py-12 border-t border-slate-100 bg-white px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-slate-500 text-sm">
+            <div>
+                <p>&copy; 2026 Shafa Zanzabila Happya Putra. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#home" class="hover:text-blue-600">Home</a>
+                <a href="#about" class="hover:text-blue-600">About</a>
+                <a href="#contact" class="hover:text-blue-600">Contact</a>
+            </div>
+            <div>
+                <p>Built with <i class="fas fa-heart text-red-500"></i> from SMAN 1 Subang</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animasi progress bar saat scroll
+        const skillSection = document.getElementById('skills');
+        const progressBars = document.querySelectorAll('.skill-progress');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 100);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(skillSection);
+    </script>
+</body>
+</html>
